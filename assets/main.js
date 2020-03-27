@@ -5,3 +5,9 @@ const loginModel = Backbone.Model.extend({
 });
 
 let myUser = new loginModel();
+
+$('form').submit((e) => {
+  myUser.set({ 'username': $('#username').first().val() })
+  console.log(myUser);
+  e.preventDefault();
+});
