@@ -43,6 +43,7 @@ const enemyListView = Backbone.View.extend({
 
 $('#enemyForm').submit(e => {
   myEnemyList.add(new enemy({ name: $('#enemyName').first().val() }));
+  console.log(myEnemyList)
   $('#enemyForm')[0].reset();
   e.preventDefault();
 });
