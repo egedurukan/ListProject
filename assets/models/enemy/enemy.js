@@ -23,6 +23,7 @@ let myEnemyList = new enemyList([
 
 const enemyListView = Backbone.View.extend({
   initialize: function () {
+    this.render();
     this.model.on('add', this.updateList, this);
   },
   render: function () {
@@ -40,10 +41,9 @@ const enemyListView = Backbone.View.extend({
   }
 });
 
-let count = 5;
-$('.addEnemy').click(e => {
-  myEnemyList.add(new enemy({ name: `Enemy${count}` }));
-  count++
+$('#enemyForm').submit(e => {
+  myEnemyList.add(new enemy({ name: $('#enemyName').first().val() }));
+  $('#enemyForm')[0].reset();
   e.preventDefault();
 });
 

@@ -17,9 +17,12 @@
       <input type="submit" value="Submit">
     </form>
   </div>
-  <button class="enemyList">EnemyList</button>
-  <button class="addEnemy">Add Enemy</button>
 
+  <form id="enemyForm">
+    <label for="enemyName">Who's your enemy?</label>
+    <input type="text" id="enemyName" name="enemyName">
+    <input type="submit" value="Add Enemy">
+  </form>
   <div id="enemyContainer"></div>
   <script type="module" src="main.js"></script>
 </body>
