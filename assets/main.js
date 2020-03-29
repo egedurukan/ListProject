@@ -42,7 +42,8 @@ let allEnemiesView = new enemyListView({ el: '#enemyContainer', model: myEnemyLi
 $('form').submit((e) => {
   let myUser = new loginModel();
 
-  myUser.set({ 'username': $('#username').first().val() })
+  myUser.set({ 'username': $('#username').first().val() });
+  $('#userForm').prepend(`<h1>${myUser.get('username')}'s Enemy List</h1>`);
   console.log(myUser);
   e.preventDefault();
 });
