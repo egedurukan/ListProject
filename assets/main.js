@@ -8,9 +8,13 @@ const enemyList = Backbone.Collection.extend({
   model: enemy
 });
 
+
+
 const enemyView = Backbone.View.extend({
-  render: () => {
+  render: function () {
     this.$el.html(this.model.get('name'));
+
+    return this;
   }
 });
 
@@ -22,7 +26,7 @@ let myEnemyList = new enemyList([
 ]);
 
 const enemyListView = Backbone.View.extend({
-  render: () => {
+  render: function () {
     let self = this;
 
     this.model.each((enemy) => {
@@ -30,6 +34,7 @@ const enemyListView = Backbone.View.extend({
       self.$el.append(enemiesView.render().$el);
     });
   }
+
 });
 
 let allEnemiesView = new enemyListView({ el: '#enemyContainer', model: myEnemyList });
