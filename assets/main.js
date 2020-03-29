@@ -15,10 +15,3 @@ $('.enemyList').click(e => {
   allEnemiesView.render();
   e.preventDefault();
 });
-
-$('.addEnemy').click(e => {
-  let count = 5;
-  myEnemyList.add({ name: `Enemy${count}` });
-  count++
-  e.preventDefault();
-})

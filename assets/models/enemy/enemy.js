@@ -4,6 +4,9 @@ const enemyList = Backbone.Collection.extend({
 });
 
 const enemyView = Backbone.View.extend({
+  initialize: function () {
+    this.model.listenTo(myEnemyList, 'change', this.render);
+  },
   render: function () {
     this.$el.html(this.model.get('name'));
 
@@ -23,11 +26,19 @@ const enemyListView = Backbone.View.extend({
     let self = this;
 
     this.model.each((enemy) => {
+      console.log(this);
       let enemiesView = new enemyView({ model: enemy });
       self.$el.append(enemiesView.render().$el);
     });
   }
 
+});
+
+let count = 5;
+$('.addEnemy').click(e => {
+  myEnemyList.add(new enemy({ name: `Enemy${count}` }));
+  count++
+  e.preventDefault();
 });
 
 export let allEnemiesView = new enemyListView({ el: '#enemyContainer', model: myEnemyList });
