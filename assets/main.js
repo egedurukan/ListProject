@@ -38,7 +38,6 @@ const enemyListView = Backbone.View.extend({
 });
 
 let allEnemiesView = new enemyListView({ el: '#enemyContainer', model: myEnemyList });
-allEnemiesView.render();
 
 $('form').submit((e) => {
   let myUser = new loginModel();
@@ -51,7 +50,7 @@ $('form').submit((e) => {
 
 $('.enemyList').click(e => {
   console.log(myEnemyList);
-  myEnemyList.models.forEach(el => console.log(el.get('name')));
+  allEnemiesView.render();
   e.preventDefault();
 });
 
