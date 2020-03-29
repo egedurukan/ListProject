@@ -1,4 +1,3 @@
-import { allEnemiesView } from './models/enemy/enemy.js';
 import { loginModel } from './models/login/login.js'
 
 $('#userForm').submit((e) => {
