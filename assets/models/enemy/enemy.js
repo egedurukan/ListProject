@@ -41,10 +41,10 @@ const enemyListView = Backbone.View.extend({
   }
 });
 
-$('#enemyForm').submit(e => {
+$('#enemyForm').submit((e) => {
+  e.preventDefault();
   myEnemyList.add(new enemy({ name: $('#enemyName').first().val() }));
   $('#enemyForm')[0].reset();
-  e.preventDefault();
 });
 
 export let allEnemiesView = new enemyListView({ el: '#enemyContainer', model: myEnemyList });
