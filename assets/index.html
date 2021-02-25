@@ -10,8 +10,21 @@
 </head>
 
 <body>
-  Hello world!
-  <script src="main.js"></script>
+  <div id="userInfo">
+    <form id="userForm">
+      <label for="username">Please write your name</label>
+      <input type="text" id="username" name="username" required>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <form id="enemyForm">
+    <label for="enemyName">Who's your enemy?</label>
+    <input type="text" id="enemyName" name="enemyName">
+    <input type="submit" value="Add Enemy">
+  </form>
+  <div id="enemyContainer"></div>
+  <script type="module" src="main.js"></script>
 </body>
 
 </html>
