@@ -9,3 +9,5 @@ $('#userForm').submit((e) => {
   $('#userForm').remove();
   e.preventDefault();
 });
+
+console.log("1");
